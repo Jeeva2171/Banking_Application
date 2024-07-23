@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%@ page import="com.bank.dao.AdminDAO,com.bank.model.Customerlogin,java.util.*" %>
           
       
@@ -28,14 +29,14 @@
                     onclick="showCustomerRegistration()">Customer Registration</button>
             </div>
             <div class="logout">
-                <form action="logout">
+                <form action="adminlogout">
                 	<button class="tab-button" id="logout" type="submit">Logout</button>
                 </form>
             </div>
         </div>
         <div class="content">
             <div class="form-container" id="customer-registration">
-                <form class="registration-form" action="CustomerRegisterServlet" method="post">
+                <form class="registration-form" action="RegisterCustomerServlet" method="post">
                     <h2>Personal Details</h2>
                     <div class="field">
                         <label for="customer-name">Customer Name</label>

@@ -8,20 +8,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Dashboard</title>
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
-        crossorigin="anonymous">
-    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     
-    <!-- Material Symbols -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200..400&display=swap">
-    
-    <!-- Custom CSS -->
+    <!-- Custom CSS 
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .container-fluid {
+            padding: 20px;
+        }
+        .welcome h4 {
+            margin: 0;
+        }
+        .balance {
+            text-align: right;
+        }
+        .span-view-icon {
+            display: flex;
+            align-items: center;
+        }
+        .span-view-icon .btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .span-view-icon .material-symbols-outlined {
+            font-size: 24px;
+        }
+        .tablink {
+            background-color: #f1f1f1;
+            color: black;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+        }
+        .tablink.active {
+            background-color: #555;
+            color: white;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+        .tabcontent input, .tabcontent button {
+            display: block;
+            margin: 10px 0;
+        }
+        .transactions {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .transaction-item {
+            display: flex;
+            align-items: center;
+        }
+        .transaction-item p {
+            margin: 0 10px;
+        }
+    </style>-->
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -122,15 +173,15 @@
                             <p>Customer Details</p>
                             <div class="details-2">
                                 <div class="details3">
-                                    <span class="material-symbols-outlined">person</span>
+                                    <span class="material-symbols-outlined">Name</span>
                                     <%= customer.getFullName() %><br>
-                                    <span class="material-symbols-outlined">smartphone</span>
+                                    <span class="material-symbols-outlined">Ph no</span>
                                     <%= customer.getMobileNo() %><br>
-                                    <span class="material-symbols-outlined">alternate_email</span>
+                                    <span class="material-symbols-outlined">Email</span>
                                     <%= customer.getEmailId() %><br>
-                                    <span class="material-symbols-outlined">calendar_today</span>
+                                    <span class="material-symbols-outlined">Date of Birth</span>
                                     <%= customer.getDateOfBirth() %><br>
-                                    <span class="material-symbols-outlined">home_pin</span>
+                                    <span class="material-symbols-outlined">Adderess</span>
                                     <%= customer.getAddress() %><br>
                                 </div>
                             </div>
@@ -187,17 +238,6 @@
                     <div class="transaction-list collapse" id="showTransactions">
                         <% for (Transaction transaction : transactions) { %>
                             <div class="transaction-item">
-                                <% if("WITHDRAW".equals(transaction.getTransactionType())) { %>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" 
-                                        width="24px" fill="#EA3323">
-                                        <path d="m216-160-56-56 464-464H360v-80h400v400h-80v-264L216-160Z"/>
-                                    </svg>
-                                <% } else if("DEPOSIT".equals(transaction.getTransactionType())) { %>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" 
-                                        width="24px" fill="#75FB4C">
-                                        <path d="M200-200v-400h80v264l464-464 56 56-464 464h264v80H200Z"/>
-                                    </svg>
-                                <% } %>
                                 <p><%= transaction.getTransactionType() %></p>
                                 <p><%= transaction.getAmount() %></p>
                                 <hr>
@@ -208,10 +248,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
-        crossorigin="anonymous"></script>
 </body>
 </html>

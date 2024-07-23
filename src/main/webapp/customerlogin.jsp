@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Account Login</title>
-    
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     
 </head>
 <body class="page">
@@ -22,7 +24,7 @@
         </div>
         <button class="submit-btn" type="submit">Sign In</button>
         <div class="admin">
-            <a href="adminlogin.jsp" class="shift">Login as Admin</a>
+            <a href="AdminLogin.jsp" class="shift">Login as Admin</a>
         </div>
     </form>
 </body>
